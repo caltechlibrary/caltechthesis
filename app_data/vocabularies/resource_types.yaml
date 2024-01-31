@@ -48,7 +48,6 @@
     en: Atlas
     de: Anmerkungssammlung
   tags:
-    - depositable
     - linkable
 - id: publication-book
   icon: file alternate
@@ -66,7 +65,6 @@
     en: Book
     de: Buch
   tags:
-    - depositable
     - linkable
 - id: publication-section
   icon: file alternate
@@ -84,7 +82,6 @@
     en: Book Section - Chapter
     de: Buchkapitel
   tags:
-    - depositable
     - linkable
 - id: conference
   icon: file alternate
@@ -117,7 +114,6 @@
     en: Paper
     de: Konferenzbeitrag
   tags:
-    - depositable
     - linkable
 - id: conference-poster
   icon: columns
@@ -135,7 +131,6 @@
     en: Poster
     de: Poster
   tags:
-    - depositable
     - linkable
 - id: conference-presentation
   icon: group
@@ -153,7 +148,6 @@
     en: Presentation
     de: Präsentation
   tags:
-    - depositable
     - linkable
 - id: publication-conferenceproceeding
   icon: file alternate
@@ -186,7 +180,6 @@
     en: Data Management Plan
     de: Datenmanagementplan
   tags:
-    - depositable
     - linkable
 - id: publication-article
   icon: file alternate
@@ -204,7 +197,6 @@
     en: Journal Article
     de: Zeitschriftenartikel
   tags:
-    - depositable
     - linkable
 - id: publication-patent
   icon: file alternate
@@ -222,7 +214,6 @@
     en: Patent
     de: Patent
   tags:
-    - depositable
     - linkable
 - id: publication-peerreview
   icon: file alternate
@@ -257,7 +248,6 @@
     en: Discussion Paper
     de: Preprint
   tags:
-    - depositable
     - linkable
 - id: publication-deliverable
   icon: file alternate
@@ -292,7 +282,6 @@
     en: Report
     de: Bericht
   tags:
-    - depositable
     - linkable
 - id: publication-softwaredocumentation
   icon: file alternate
@@ -310,7 +299,6 @@
     en: Software Documentation
     de: Softwaredokumentation
   tags:
-    - depositable
     - linkable
 - id: publication-technicalnote
   icon: file alternate
@@ -328,7 +316,6 @@
     en: Technical Report
     de: Technische Anmerkung
   tags:
-    - depositable
     - linkable
 - id: publication-thesis
   icon: file alternate
@@ -364,7 +351,6 @@
     en: Working Paper
     de: Arbeitspapier
   tags:
-    - depositable
     - linkable
 - id: publication-datapaper
   icon: file alternate
@@ -416,7 +402,6 @@
     en: Other
     de: Sonstige
   tags:
-    - depositable
     - linkable
 - id: publication-documentation
   icon: file alternate
@@ -434,7 +419,6 @@
     en: Documentation or Manual
     de: Sonstige
   tags:
-    - depositable
     - linkable
 - id: publication-journal
   icon: file alternate
@@ -452,7 +436,6 @@
     en: Journal Issue
     de: Sonstige
   tags:
-    - depositable
     - linkable
 - id: publication-newspaperissue
   icon: file alternate
@@ -470,7 +453,6 @@
     en: Newspaper Issue
     de: Sonstige
   tags:
-    - depositable
     - linkable
 - id: publication-erratum
   icon: file alternate
@@ -488,7 +470,6 @@
     en: Erratum
     de: Sonstige
   tags:
-    - depositable
     - linkable
 - id: publication-oralhistory
   icon: file alternate
@@ -506,7 +487,6 @@
     en: Oral History
     de: Sonstige
   tags:
-    - depositable
     - linkable
 - id: publication-map
   icon: file alternate
@@ -524,7 +504,6 @@
     en: Map
     de: Sonstige
   tags:
-    - depositable
     - linkable
 - id: publication-whitepaper
   icon: file alternate
@@ -542,7 +521,6 @@
     en: White Paper
     de: Sonstige
   tags:
-    - depositable
     - linkable
 - id: event
   icon: calendar alternate outline
@@ -577,7 +555,6 @@
     en: Lab Notebook
     de: Sonstige
   tags:
-    - depositable
     - linkable
 - id: presentation
   icon: group
@@ -595,7 +572,6 @@
     en: Presentation or Speech
     de: Präsentation
   tags:
-    - depositable
     - linkable
 - id: dataset
   icon: table
@@ -613,7 +589,6 @@
     en: Dataset
     de: Datensatz
   tags:
-    - depositable
     - linkable
 - id: image
   icon: chart bar outline
@@ -631,7 +606,6 @@
     en: Image
     de: Bild
   tags:
-    - depositable
     - linkable
 - id: image-map
   icon: chart bar outline
@@ -649,7 +623,6 @@
     en: Map
     de: Plot
   tags:
-    - depositable
     - linkable
 - id: video
   icon: film
@@ -667,7 +640,6 @@
     en: Video/Audio
     de: Video/Audio
   tags:
-    - depositable
     - linkable
 - id: software
   icon: code
@@ -685,7 +657,6 @@
     en: Software
     de: Software
   tags:
-    - depositable
     - linkable
 - id: teachingresource
   icon: graduation
@@ -703,7 +674,6 @@
     en: Teaching Resource
     de: Unterrichtseinheit
   tags:
-    - depositable
     - linkable
 - id: teachingresource-lecturenotes
   icon: graduation
@@ -721,7 +691,6 @@
     en: Lecture Notes
     de: Unterrichtseinheit
   tags:
-    - depositable
     - linkable
 - id: teachingresource-textbook
   icon: graduation
@@ -739,7 +708,6 @@
     en: Textbook
     de: Unterrichtseinheit
   tags:
-    - depositable
     - linkable
 - id: software-computationalnotebook
   icon: code
@@ -774,7 +742,6 @@
     en: Other
     de: Sonstige
   tags:
-    - depositable
     - linkable
 - id: publication-supplemental
   icon: file alternate
@@ -792,5 +759,4 @@
     en: Supplemental Material
     de: Zeitschriftenartikel
   tags:
-    - depositable
     - linkable
