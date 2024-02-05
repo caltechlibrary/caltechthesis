@@ -1,3 +1,3 @@
-{{ _('Click the link below to reset your CaltechAUTHORS local password:') }}
+{{ _('Click the link below to reset your CaltechTHESIS local password:') }}
 
 {{ reset_link }}

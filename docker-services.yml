@@ -16,12 +16,12 @@ services:
       - "INVENIO_CELERY_RESULT_BACKEND=redis://cache:6379/2"
       - "INVENIO_SEARCH_HOSTS=['search:9200']"
       - "INVENIO_SECRET_KEY=CHANGE_ME"
-      - "INVENIO_SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://caltechauthors:caltechauthors@db/caltechauthors"
+      - "INVENIO_SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://caltechthesis:caltechthesis@db/caltechthesis"
       - "INVENIO_WSGI_PROXIES=2"
       - "INVENIO_RATELIMIT_STORAGE_URL=redis://cache:6379/3"
   frontend:
     build: ./docker/nginx/
-    image: caltechauthors-frontend
+    image: caltechthesis-frontend
     restart: "unless-stopped"
     ports:
       - "80"
@@ -36,9 +36,9 @@ services:
     image: postgres:12.4
     restart: "unless-stopped"
     environment:
-      - "POSTGRES_USER=caltechauthors"
-      - "POSTGRES_PASSWORD=caltechauthors"
-      - "POSTGRES_DB=caltechauthors"
+      - "POSTGRES_USER=caltechthesis"
+      - "POSTGRES_PASSWORD=caltechthesis"
+      - "POSTGRES_DB=caltechthesis"
     ports:
       - "5432:5432"
   pgadmin:
@@ -48,7 +48,7 @@ services:
       - "5050:80"
     environment:
       PGADMIN_DEFAULT_EMAIL: "library@caltech.edu"
-      PGADMIN_DEFAULT_PASSWORD: "caltechauthors"
+      PGADMIN_DEFAULT_PASSWORD: "caltechthesis"
     volumes:
       - ./docker/pgadmin/servers.json:/pgadmin4/servers.json
   mq:

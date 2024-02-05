@@ -1,1 +1,1 @@
-{{ _('Your CaltechAUTHORS local password has been reset. If you experience any issues, please let us know at library@caltech.edu') }}
+{{ _('Your CaltechTHESIS local password has been reset. If you experience any issues, please let us know at library@caltech.edu') }}

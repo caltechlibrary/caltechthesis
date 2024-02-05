@@ -6,8 +6,8 @@ Type=simple
 User=ubuntu
 StandardOutput=kmsg
 StandardError=kmsg
-WorkingDirectory=/Sites/caltechauthors
-EnvironmentFile=/Sites/caltechauthors/.env
+WorkingDirectory=/Sites/caltechthesis
+EnvironmentFile=/Sites/caltechthesis/.env
 ExecStart=/usr/local/bin/pipenv run uwsgi --logger syslog:inveniordm_ui uwsgi_ui.ini
 
 [Install]
