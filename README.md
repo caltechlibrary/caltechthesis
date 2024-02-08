@@ -50,7 +50,7 @@ Clone this repository into /Sites, then go to that directory. We need a local co
 git clone https://github.com/caltechlibrary/idutils.git
 cd idutils
 git checkout authors
-cd ../caltechauthors
+cd ../caltechthesis
 pipenv install
 invenio-cli packages install ../idutils
 invenio-cli services setup --no-demo-data
