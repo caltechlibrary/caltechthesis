@@ -12,11 +12,12 @@ uwsgi = ">=2.0"
 uwsgitop = ">=0.11"
 uwsgi-tools = ">=1.1.1"
 python-dotenv = "*"
-invenio-app-rdm = {version = "~=12.0.0b2.dev68", extras = ["opensearch2", "postgresql"]}
+invenio-app-rdm = {version = "~=12.0.0b3.dev12", extras = ["opensearch2", "postgresql"]}
 invenio-saml = "*"
 sentry-sdk = "*"
 invenio-s3 = "*"
 invenio-assets = ">=v3.0.1"
+xmlsec = "==1.3.13"
 
 [requires]
 python_version = "3.9"
