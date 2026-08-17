@@ -1,3 +1,29 @@
+[project]
+name = "caltechthesis"
+version = "0.1.0"
+description = "CaltechTHESIS customizations for InvenioRDM."
+requires-python = ">= 3.14"
+
+[project.entry-points."invenio_base.blueprints"]
+caltechauthors_views = "caltechthesis.views:create_blueprint"
+
+[project.entry-points."invenio_assets.webpack"]
+caltechauthors_theme = "caltechthesis.webpack:theme"
+
 [build-system]
-requires = ["setuptools", "wheel", "babel>2.8"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["caltechthesis"]
+
+[tool.isort]
+profile = "black"
+
+[tool.pydocstyle]
+add_ignore = ["D401", "D403"]
+
+[tool.pytest.ini_options]
+addopts = ["--isort", "--pydocstyle", "--doctest-glob=\"*.rst\"", "--doctest-modules", "--cov=caltechthesis", "--cov-report=term-missing", "--exclude-warning-annotations"]
+testpaths = "tests caltechthesis"
+live_server_scope = "module"

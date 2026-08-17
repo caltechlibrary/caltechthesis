@@ -8,7 +8,7 @@ StandardOutput=kmsg
 StandardError=kmsg
 WorkingDirectory=/Sites/caltechthesis
 EnvironmentFile=/Sites/caltechthesis/.env
-ExecStart=/usr/local/bin/pipenv run celery --app invenio_app.celery worker --beat --events --loglevel INFO
+ExecStart=/snap/bin/uv run --frozen --no-dev celery --app invenio_app.celery worker --beat --events --loglevel INFO
 
 [Install]
 WantedBy=multi-user.target

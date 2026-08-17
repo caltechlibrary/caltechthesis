@@ -1,4 +1,4 @@
-# Run with `pipenv run invenio shell change_owner.py`
+# Run with `uv run invenio shell change_owner.py`
 
 from invenio_db import db
 from invenio_accounts import current_accounts

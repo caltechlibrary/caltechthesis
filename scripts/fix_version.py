@@ -1,4 +1,4 @@
-# Run with `pipenv run invenio shell fix_version.py`
+# Run with `uv run invenio shell fix_version.py`
 
 from invenio_db import db
 from invenio_accounts import current_accounts
