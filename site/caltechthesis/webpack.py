@@ -1,4 +1,4 @@
-"""JS/CSS Webpack bundles for CaltechAUTHORS."""
+"""JS/CSS Webpack bundles for CaltechTHESIS."""
 
 from invenio_assets.webpack import WebpackThemeBundle
 

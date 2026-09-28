@@ -5,10 +5,10 @@ description = "CaltechTHESIS customizations for InvenioRDM."
 requires-python = ">= 3.14"
 
 [project.entry-points."invenio_base.blueprints"]
-caltechauthors_views = "caltechthesis.views:create_blueprint"
+caltechthesis_views = "caltechthesis.views:create_blueprint"
 
 [project.entry-points."invenio_assets.webpack"]
-caltechauthors_theme = "caltechthesis.webpack:theme"
+caltechthesis_theme = "caltechthesis.webpack:theme"
 
 [build-system]
 requires = ["hatchling"]

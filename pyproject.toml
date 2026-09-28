@@ -1,5 +1,5 @@
 [project]
-name = "caltechauthors-instance"
+name = "caltechthesis-instance"
 description = "CaltechTHESIS InvenioRDM Instance"
 readme = "README.md"
 version = "14.0.0"
@@ -8,7 +8,7 @@ requires-python = "~= 3.14.0"
 dependencies = [
   "invenio-app-rdm[opensearch2,s3]~=14.0.0",
   "invenio-saml",
-  "caltechauthors",
+  "caltechthesis",
   "uwsgi>=2.0",
   "uwsgitop>=0.11",
   "uwsgi-tools>=1.1.1",
@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-caltechauthors = { workspace = true }
+caltechthesis = { workspace = true }
 
 [tool.uv.workspace]
 members = ["site"]

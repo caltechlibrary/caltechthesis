@@ -4,8 +4,8 @@ requires-python = "==3.14.*"
 
 [manifest]
 members = [
-    "caltechauthors",
-    "caltechauthors-instance",
+    "caltechthesis",
+    "caltechthesis-instance",
 ]
 
 [[package]]
@@ -334,16 +334,16 @@ wheels = [
 ]
 
 [[package]]
-name = "caltechauthors"
+name = "caltechthesis"
 version = "0.1.0"
 source = { editable = "site" }
 
 [[package]]
-name = "caltechauthors-instance"
+name = "caltechthesis-instance"
 version = "14.0.0"
 source = { editable = "." }
 dependencies = [
-    { name = "caltechauthors" },
+    { name = "caltechthesis" },
     { name = "invenio-app-rdm", extra = ["opensearch2", "s3"] },
     { name = "invenio-saml" },
     { name = "lxml-html-clean" },
@@ -361,7 +361,7 @@ tests = [
 
 [package.metadata]
 requires-dist = [
-    { name = "caltechauthors", editable = "site" },
+    { name = "caltechthesis", editable = "site" },
     { name = "invenio-app-rdm", extras = ["opensearch2", "s3"], specifier = "~=14.0.0" },
     { name = "invenio-saml" },
     { name = "lxml-html-clean", specifier = ">=0.1.1" },
