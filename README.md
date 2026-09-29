@@ -91,7 +91,9 @@ uv run invenio vocabularies import --vocabulary names --filepath ./vocabularies-
 You'll need a domain name, and set an A record to point the domain name to your
 AWS instance.
 
-Copy nginx.conf to `/etc/nginx/sites-available/caltechthesis.conf`, link it
+Copy `nginx-dev.conf` (thesis.caltechlibrary.dev, the AWS development host) or
+`nginx-production.conf` (thesis.library.caltech.edu) to
+`/etc/nginx/sites-available/caltechthesis.conf`, link it
 into `sites-enabled/` and remove the `default` site. It includes
 `/Sites/caltechthesis/redirect-map.conf` by absolute path, so the map stays in
 the checkout and is not copied to `/etc/nginx/`. The proxy settings and
