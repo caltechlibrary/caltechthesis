@@ -1,21 +1,21 @@
 # list of pages:
 - url: /help
-  title: CaltechAUTHORS Help
-  description: Help documentation for
+  title: CaltechTHESIS Help
+  description: Help for CaltechTHESIS
   template: help.html
 - url: /policies
-  title: CaltechAUTHORS Policies
-  description: CaltechAUTHORS Policies
+  title: CaltechTHESIS Policies
+  description: CaltechTHESIS Policies
   template: policies.html
 - url: /about
-  title: About CaltechAUTHORS
-  description: About CaltechAUTHORS
+  title: About CaltechTHESIS
+  description: About CaltechTHESIS
   template: about.html
 - url: /year
   title: Browse by year
-  description: CaltechAUTHORS content by year
+  description: CaltechTHESIS content by year
   template: year.html
 - url: /metadata_searching
   title: Metadata field searches
-  description: Examples searches of CaltechAUTHORS metadata
+  description: Example searches of CaltechTHESIS metadata
   template: metadata_searching.html
