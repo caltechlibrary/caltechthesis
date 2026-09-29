@@ -76,7 +76,7 @@ services:
     depends_on:
       search:
         condition: service_healthy
-    image: caltechauthors:latest
+    image: caltechthesis:latest
     ports:
       - "${DOCKER_SERVICES_IP_BIND:-127.0.0.1}:5000:5000"
     volumes:
@@ -91,7 +91,7 @@ services:
     depends_on:
       search:
         condition: service_healthy
-    image: caltechauthors:latest
+    image: caltechthesis:latest
     ports:
       - "${DOCKER_SERVICES_IP_BIND:-127.0.0.1}:5001:5000"
 
@@ -101,7 +101,7 @@ services:
       file: docker-services.yml
       service: app
     command: ["celery -A invenio_app.celery worker --beat --loglevel=INFO"]
-    image: caltechauthors:latest
+    image: caltechthesis:latest
     depends_on:
       search:
         condition: service_healthy
@@ -118,7 +118,7 @@ services:
       file: docker-services.yml
       service: app
     command: ["celery -A invenio_app.celery beat --scheduler invenio_jobs.services.scheduler:RunScheduler --loglevel=INFO"]
-    image: caltechauthors:latest
+    image: caltechthesis:latest
     depends_on:
       mq:
         condition: service_started

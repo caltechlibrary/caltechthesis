@@ -31,7 +31,7 @@ institution and IT setup.
 
 ## Installation
 
-We currently deploy CaltechAUTHORS on a m7i.xlarge AWS EC2 instance with Ubuntu
+We currently deploy CaltechTHESIS on a m7i.xlarge AWS EC2 instance with Ubuntu
 24.04. We use this [cloud-init
 file](https://github.com/caltechlibrary/cloud-init-examples/blob/main/invenio-rdm-13-init.yaml)
 to do most of the initial setup.

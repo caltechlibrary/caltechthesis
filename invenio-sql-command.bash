@@ -32,8 +32,8 @@ Backup the Postgres running in 'caltechdata_db_1' and write them
 to '/var/backups/postgres'.
 
 ~~~shell
-     ${APP_NAME} caltechauthors_db_1 '\dt'
-	bash invenio-sql-command.bash  caltechauthors_db_1 'SELECT json from vocabularies_metadata;'
+     ${APP_NAME} caltechthesis_db_1 '\dt'
+	bash invenio-sql-command.bash  caltechthesis_db_1 'SELECT json from vocabularies_metadata;'
 ~~~
 
 EOT
