@@ -23,6 +23,11 @@
 #     /opt/rdm_opensearch_backups, the same as CaltechAUTHORS and CaltechDATA,
 #     so clasm can snapshot this instance. The setup script creates that
 #     directory (uid 1000) before starting the containers.
+#   - File storage: local disk while testing, S3 in production (like
+#     CaltechAUTHORS). invenio.cfg selects the S3 factory; .env overrides it to
+#     the local one here via INVENIO_FILES_REST_STORAGE_FACTORY, and the setup
+#     script creates a local default location. Going to S3 means deleting that
+#     .env line and creating the location for the real bucket.
 #   - Granian sizing (2 workers x 2 threads) carries over this repo's old
 #     uWSGI tuning; unverified under load.
 #
@@ -376,7 +381,17 @@ write_files:
       echo "search_data named volume from docker-services.yml, so unlike the"
       echo "CaltechAUTHORS bind mounts there are no host directories to"
       echo "create first."
-      invenio-cli services setup --no-demo-data
+      echo "File storage: local, for testing. invenio.cfg selects the S3"
+      echo "storage factory (production stores uploads in S3), and .invenio"
+      echo "says file_storage = S3, which would make 'services setup' create a"
+      echo "location named s3://default -- a bucket that does not exist."
+      echo "Temporarily flip .invenio to local for the setup run (setup then"
+      echo "creates a default location under the instance path), and restore"
+      echo "the tracked file afterwards. .env below overrides the storage"
+      echo "factory to match."
+      sed -i 's/^file_storage = S3$/file_storage = local/' .invenio
+      invenio-cli services setup --no-demo-data || { git checkout -- .invenio; exit 1; }
+      git checkout -- .invenio
 
       echo "Generating self-signed TLS cert (internal test instance behind"
       echo "a restricted security group, not a public endpoint -- a real"
@@ -598,12 +613,15 @@ write_files:
       INVENIO_CELERY_BROKER_URL=amqp://guest:guest@localhost:5672/
       INVENIO_SEARCH_HOSTS=["localhost:9200"]
       INVENIO_DATACITE_ENABLED=false
+      INVENIO_FILES_REST_STORAGE_FACTORY=invenio_files_rest.storage.pyfs_storage_factory
       EOT
       chmod 600 .env
-      echo "NOTE: S3/production file-storage endpoint config for restored"
-      echo "file objects is a separate decision, deliberately left unset"
-      echo "here -- add INVENIO_S3_* / FILES_REST_STORAGE_FACTORY overrides"
-      echo "before restoring records that reference real S3 objects."
+      echo "NOTE: uploads go to local disk on this instance (see the"
+      echo "INVENIO_FILES_REST_STORAGE_FACTORY line in .env). For production-"
+      echo "shaped S3 storage, delete that line, set INVENIO_S3_* credentials,"
+      echo "and create the default location for the real bucket with"
+      echo "'invenio files location create --default default-location s3://BUCKET'."
+      echo "Production does not run 'services setup'; it restores data."
 
       echo "Installing this repo's own committed systemd units (rdm.service,"
       echo "rdm_rest.service, rdm_celery.service). As of 2026-09-10 those"
@@ -656,9 +674,8 @@ write_files:
          Postgres/OpenSearch: local Docker volumes, freshly initialised by
          'invenio-cli services setup --no-demo-data' -- empty of records.
          The static pages are the placeholders from app_data/pages/.
-         File storage: NOT configured beyond what invenio.cfg does on its
-         own (.invenio says S3) -- set INVENIO_S3_* in .env and create the
-         default file location before depositing anything.
+         File storage: local disk (testing). Production uses S3 -- see the
+         NOTE printed when .env was written.
 
              cd /Sites/${INSTANCE_NAME}
              sudo systemctl start rdm.target   # or: start rdm_celery rdm_rest rdm nginx
