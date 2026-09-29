@@ -33,9 +33,10 @@
 #   - No production snapshot exists to restore, so setup runs
 #     `invenio-cli services setup --no-demo-data` rather than leaving the
 #     database for a clasm restore as CaltechAUTHORS does.
-#   - docker-services.yml here has NO OpenSearch path.repo setting and no
-#     backup bind mount (CaltechAUTHORS retrofitted both). Add them before
-#     relying on clasm snapshots for this instance.
+#   - docker-services.yml sets OpenSearch path.repo and bind-mounts
+#     /opt/rdm_opensearch_backups, the same as CaltechAUTHORS and CaltechDATA,
+#     so clasm can snapshot this instance. The setup script creates that
+#     directory (uid 1000) before starting the containers.
 #   - Granian sizing (2 workers x 2 threads) carries over this repo's old
 #     uWSGI tuning; unverified under load.
 #
@@ -372,6 +373,14 @@ write_files:
 
       echo "Building assets and translations"
       invenio-cli install
+
+      echo "Creating the OpenSearch snapshot directory. docker-services.yml"
+      echo "bind-mounts /opt/rdm_opensearch_backups as path.repo (so clasm can"
+      echo "back up and restore the index), owned by uid 1000 inside the"
+      echo "container. If it does not exist first, Docker creates it as root"
+      echo "and OpenSearch cannot write snapshots."
+      sudo mkdir -p /opt/rdm_opensearch_backups
+      sudo chown 1000:1000 /opt/rdm_opensearch_backups
 
       echo "Starting backing services (Postgres/Redis/RabbitMQ/OpenSearch)"
       echo "and initialising them -- unlike CaltechAUTHORS there is no"
