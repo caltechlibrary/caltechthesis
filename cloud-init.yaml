@@ -118,7 +118,7 @@ write_files:
         [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
         nvm install 26
         nvm alias default 26
-        # RDM v14's asset build (invenio-assets via pynpm) runs pnpm, not npm.
+        # The asset build in RDM v14 (invenio-assets via pynpm) runs pnpm, not npm.
         # Node 25+ no longer bundles corepack, so `corepack enable` is not an
         # option; install it from npm. Found live on the first Multipass boot:
         # `invenio-cli install` died with FileNotFoundError: 'pnpm'.
