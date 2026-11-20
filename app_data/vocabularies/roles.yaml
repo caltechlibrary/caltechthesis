@@ -232,3 +232,29 @@
   title:
     en: Corresponding
     de: Andere
+# --- local thesis roles (caltechthesis DR-0002 and its addendum) ---
+- id: advisor
+  props:
+    datacite: Supervisor
+  title:
+    en: Advisor
+- id: co_advisor
+  props:
+    datacite: Supervisor
+  title:
+    en: Co-advisor
+- id: committee_chair
+  props:
+    datacite: Other
+  title:
+    en: Committee chair
+- id: committee_co_chair
+  props:
+    datacite: Other
+  title:
+    en: Committee co-chair
+- id: committee_member
+  props:
+    datacite: Other
+  title:
+    en: Committee member

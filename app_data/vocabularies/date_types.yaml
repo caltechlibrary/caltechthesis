@@ -1,0 +1,137 @@
+# Copied from invenio_rdm_records 32.2.0 (InvenioRDM v14.0.4),
+# fixtures/data/vocabularies/date_types.yaml, then extended with the three
+# local thesis date types at the end (caltechthesis DR-0002).
+# A copy drifts from upstream: when the invenio-app-rdm pin moves, diff this
+# against the new stock list and reconcile (the upgrade recipe does this).
+# The stock entries are unchanged and keep their order; v14.0 added `coverage`.
+- id: accepted
+  props:
+    datacite: Accepted
+  title:
+    en: Accepted
+    sv: Accepterad
+    de: Angenommen
+    es: Aceptado
+    cs: Přijato
+    ar: مقبول
+- id: available
+  props:
+    datacite: Available
+  title:
+    en: Available
+    sv: Tillgänglig
+    de: Verfügbar
+    es: Disponible
+    cs: Dostupné
+    ar: متاح
+- id: collected
+  props:
+    datacite: Collected
+  title:
+    en: Collected
+    sv: Samlade
+    de: Gesammelt
+    es: Recolectado
+    cs: Sebrané
+    ar: مجمّع
+- id: copyrighted
+  props:
+    datacite: Copyrighted
+  title:
+    en: Copyrighted
+    sv: Upphovsrättsligt skyddad
+    de: Mit Copyright versehen
+    es: Protegido por derechos de autor
+    cs: Copyright udělen
+    ar: حقوق الطبع والنشر محفوظة
+- id: created
+  props:
+    datacite: Created
+  title:
+    en: Created
+    sv: Skapad
+    de: Erstellt
+    es: Creado
+    cs: Vytvořeno
+    ar: مُنْشَأ
+- id: issued
+  props:
+    datacite: Issued
+  title:
+    en: Issued
+    sv: Utfärdad
+    de: Veröffentlicht
+    es: Publicado
+    cs: Vydáno
+    ar: منشور
+- id: other
+  props:
+    datacite: Other
+  title:
+    en: Other
+    sv: Övrig
+    de: Sonstiges
+    es: Otro
+    cs: Jiné
+    ar: آخر
+- id: submitted
+  props:
+    datacite: Submitted
+  title:
+    en: Submitted
+    sv: Inskickad
+    de: Eingereicht
+    es: Enviado
+    cs: Odesláno
+    ar: تمّ تقديمه
+- id: updated
+  props:
+    datacite: Updated
+  title:
+    en: Updated
+    sv: Uppdaterad
+    de: Aktualisiert
+    es: Actualizado
+    cs: Aktualizováno
+    ar: محيّن
+- id: valid
+  props:
+    datacite: Valid
+  title:
+    en: Valid
+    sv: Giltig
+    de: Gültig
+    es: Válido
+    cs: Platnost
+    ar: صالح
+- id: withdrawn
+  props:
+    datacite: Withdrawn
+  title:
+    en: Withdrawn
+    sv: Tillbakadragen
+    de: Zurückgezogen
+    es: Retirado
+    cs: Stáhnuto
+    ar: ألغي
+- id: coverage
+  props:
+    datacite: Coverage
+  title:
+    en: Coverage
+# --- local thesis date types (caltechthesis DR-0002) ---
+- id: degree_date
+  props:
+    datacite: Issued
+  title:
+    en: Degree date
+- id: approved_date
+  props:
+    datacite: Accepted
+  title:
+    en: Approved date
+- id: gradofc_approval_date
+  props:
+    datacite: Accepted
+  title:
+    en: Graduate Office approval date
